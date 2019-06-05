@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery animation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<style>
+		* { padding: 0; margin: 0; }
+		body { font-family: sans-serif; font-size: 100%; margin: 10px; color: #222; background-color: #eee; }
+		#animate { 
+			position: absolute; 
+			top: 80px; 
+			left: 100px; 
+			width: 180px; 
+			height: 120px; 
+			font-size: 2em; 
+			text-align: center; 
+			line-height: 118px; 
+			color: #fff; 
+			background-color: #00c; 
+			border: 2px solid #006; 
+			border-radius: 5px; 
+			display: none;}
+
+		#toDo {
+			position: relative;
+			top:  200px;
+			left: 50px;
+		}
+
+		h1 {
+			font-size: 120%;
+		}
+
+		ul {
+			margin: 15px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1>jQuery Animation</h1>
+
+	<div id="animate">ANIMATE</div>
+
+	<div id="toDo">
+		<h1>ToDo list</h1>
+		<ul>
+			<li>html structure</li>
+			<li>css style</li>
+			<li>json data</li>
+			<li>js function and animation</li>
+			<li>exercise</li>
+		</ul>
+		<input type='text' placeholder="new task">
+		<button>submit</button>		
+	</div>
+
+
+	<script>
+		$(document).ready(function(){
+			$("#animate").fadeIn(3000).delay(5000).fadeOut(3000);
+			
+			$("li").click(function(){
+				$(this).animate({
+					paddingLeft: '+=150',
+					opacity: 0.0
+					}, 300, function() {$(this).remove();});
+			});
+
+			$("button").click(function(){
+				var newTask = $('<li></li>').text($("input").val());
+				$("ul").append(newTask);
+
+				$("li").click(function(){
+				$(this).animate({
+					paddingLeft: '+=150',
+					opacity: 0.0
+					}, 300, function() {$(this).remove();});
+			});
+
+
+			});
+
+
+			
+		})
+	</script>
+
+</body>
+</html>
