@@ -1,0 +1,18 @@
+var items = [ {
+
+      "UniqueID": "01",
+      "name": "Huawei P30",
+      "price": 500,
+      "pic": "huawei.png",
+      "category": "Phone"
+
+      }, {
+
+      "UniqueID": "02",
+      "name": "Windows Surface 2",
+      "price": 1300,
+      "pic": "surface.png",
+      "category": "Tablet"
+
+      }
+];
